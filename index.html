@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Blood Donation Finder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">❤️ Blood Donation Finder</div>
+    <ul>
+      <li><a href="#home" class="nav-link">Home</a></li>
+      <li><a href="#register" class="nav-link">Register</a></li>
+      <li><a href="#find" class="nav-link">Find Donors</a></li>
+      <li><a href="#request" class="nav-link">Request Blood</a></li>
+      <li><a href="#dashboard" class="nav-link">Dashboard</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+    </ul>
+  </nav>
+
+  <!-- Home -->
+  <section id="home" class="page active">
+    <div class="hero">
+      <img src="https://cdn-icons-png.flaticon.com/512/2966/2966327.png" class="hero-img" alt="Blood donation">
+      <h1>Donate Blood, Save Lives</h1>
+      <p>Connecting donors with those in need — quick, simple, lifesaving.</p>
+      <div class="hero-cta">
+        <a href="#find" class="btn nav-link">🔎 Find Donors</a>
+        <a href="#register" class="btn ghost nav-link">❤️ Register as Donor</a>
+      </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="features">
+      <div class="feature-card nav-link" data-target="find">
+        <img src="https://cdn-icons-png.flaticon.com/512/1483/1483336.png" alt="Find Donors">
+        <h3>Find Donors</h3>
+        <p>Search by blood group and location instantly.</p>
+      </div>
+      <div class="feature-card nav-link" data-target="register">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Register">
+        <h3>Become a Donor</h3>
+        <p>Register in minutes and help save lives around you.</p>
+      </div>
+      <div class="feature-card nav-link" data-target="request">
+        <img src="https://cdn-icons-png.flaticon.com/512/3062/3062634.png" alt="Request Blood">
+        <h3>Request Blood</h3>
+        <p>Need help urgently? Post a blood request in seconds.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Register -->
+  <section id="register" class="page">
+    <h2>Register as Donor</h2>
+    <form id="donor-form" class="card">
+      <input id="donor-name" placeholder="Full Name" required>
+      <select id="donor-blood" required>
+        <option value="">Select Blood Group</option>
+        <option>A+</option><option>A-</option>
+        <option>B+</option><option>B-</option>
+        <option>O+</option><option>O-</option>
+        <option>AB+</option><option>AB-</option>
+      </select>
+      <input id="donor-location" placeholder="Location" required>
+      <button type="submit" class="btn">Register</button>
+    </form>
+    <div id="recent-donors" class="list"></div>
+  </section>
+
+  <!-- Find -->
+  <section id="find" class="page">
+    <h2>Find Donors</h2>
+    <div class="card search-bar">
+      <select id="search-blood">
+        <option value="">All Groups</option>
+        <option>A+</option><option>A-</option>
+        <option>B+</option><option>B-</option>
+        <option>O+</option><option>O-</option>
+        <option>AB+</option><option>AB-</option>
+      </select>
+      <button id="search-btn" class="btn">Search</button>
+    </div>
+    <div id="donor-results" class="list"></div>
+    <div id="search-loading" class="loading">Searching...</div>
+  </section>
+
+  <!-- Request -->
+  <section id="request" class="page">
+    <h2>Request Blood</h2>
+    <form id="request-form" class="card">
+      <input id="patient-name" placeholder="Patient Name" required>
+      <select id="request-blood" required>
+        <option value="">Select Blood Group</option>
+        <option>A+</option><option>A-</option>
+        <option>B+</option><option>B-</option>
+        <option>O+</option><option>O-</option>
+        <option>AB+</option><option>AB-</option>
+      </select>
+      <input id="request-location" placeholder="Hospital / Location" required>
+      <select id="request-urgency" required>
+        <option value="Normal">Normal</option>
+        <option value="Urgent">Urgent</option>
+        <option value="Critical">Critical</option>
+      </select>
+      <textarea id="request-details" placeholder="Additional Details"></textarea>
+      <button type="submit" class="btn">Submit Request</button>
+    </form>
+    <div id="recent-requests" class="list"></div>
+  </section>
+
+  <!-- Dashboard -->
+  <section id="dashboard" class="page">
+    <h2>Dashboard</h2>
+    <div class="stats">
+      <div class="stat-card"><h3 id="stat-donors">0</h3><p>Donors Registered</p></div>
+      <div class="stat-card"><h3 id="stat-requests">0</h3><p>Requests Made</p></div>
+    </div>
+    <div class="accordion">
+      <button class="accordion-btn">📋 My Donors</button>
+      <div class="accordion-content" id="my-donors"></div>
+      <button class="accordion-btn">🩸 My Requests</button>
+      <div class="accordion-content" id="my-requests"></div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="page">
+    <h2>About Us</h2>
+    <div class="team">
+      <div class="team-card"><img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"><p>Team Voughts</p></div>
+      <div class="team-card"><img src="https://cdn-icons-png.flaticon.com/512/236/236831.png"><p>Adhan muhammed s</p></div>
+      <div class="team-card"><img src="https://cdn-icons-png.flaticon.com/512/236/236832.png"><p>Devadathan s</p></div>
+    </div>
+    <h3>Future Scope</h3>
+    <ul class="future-scope">
+      <li><strong>🏥 Hospital Integration</strong> – connect with local hospitals</li>
+      <li><strong>🤖 AI Matching</strong> – suggest best donor matches</li>
+    </ul>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Blood Donation Finder | Built with ❤️ by Team Voughts</p>
+  </footer>
+
+  <!-- Script -->
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const pages = document.querySelectorAll(".page");
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    function showPage(id) {
+      pages.forEach(p => p.classList.remove("active"));
+      const el = document.getElementById(id);
+      if (el) el.classList.add("active");
+      navLinks.forEach(a => a.classList.toggle("active-link", a.getAttribute("href") === "#" + id));
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    // handle nav links + feature cards
+    document.querySelectorAll(".nav-link").forEach(link => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        const target = link.dataset.target || link.getAttribute("href").replace("#", "");
+        showPage(target);
+        history.replaceState(null, "", "#" + target);
+      });
+    });
+
+    const donorForm = document.getElementById("donor-form");
+    const donorName = document.getElementById("donor-name");
+    const donorBlood = document.getElementById("donor-blood");
+    const donorLocation = document.getElementById("donor-location");
+    const recentDonorsEl = document.getElementById("recent-donors");
+
+    const searchBtn = document.getElementById("search-btn");
+    const searchBlood = document.getElementById("search-blood");
+    const donorResultsEl = document.getElementById("donor-results");
+    const searchLoading = document.getElementById("search-loading");
+
+    const requestForm = document.getElementById("request-form");
+    const patientName = document.getElementById("patient-name");
+    const requestBlood = document.getElementById("request-blood");
+    const requestLocation = document.getElementById("request-location");
+    const requestUrgency = document.getElementById("request-urgency");
+    const requestDetails = document.getElementById("request-details");
+    const recentRequestsEl = document.getElementById("recent-requests");
+
+    const statDonors = document.getElementById("stat-donors");
+    const statRequests = document.getElementById("stat-requests");
+    const myDonorsEl = document.getElementById("my-donors");
+    const myRequestsEl = document.getElementById("my-requests");
+
+    function escapeHtml(str) {
+      return String(str).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+    }
+
+    function showToast(msg) {
+      const toast = document.createElement("div");
+      toast.className = "toast";
+      toast.textContent = msg;
+      document.body.appendChild(toast);
+      requestAnimationFrame(() => toast.classList.add("show"));
+      setTimeout(() => { toast.classList.remove("show"); toast.remove(); }, 3000);
+    }
+
+    let donors = [];
+    let requests = [];
+
+    function updateRecentDonors() {
+      recentDonorsEl.innerHTML = "<h3>Recent Donors</h3>";
+      const recent = donors.slice(-3).reverse();
+      if (!recent.length) { recentDonorsEl.innerHTML += "<p>No donors yet.</p>"; return; }
+      recent.forEach(d => {
+        recentDonorsEl.innerHTML += `<div class="item"><strong>${escapeHtml(d.name)}</strong> — <span class="badge plus">${escapeHtml(d.blood)}</span> (${escapeHtml(d.location)})</div>`;
+      });
+    }
+
+    function updateRecentRequests() {
+      recentRequestsEl.innerHTML = "<h3>Recent Requests</h3>";
+      const recent = requests.slice(-3).reverse();
+      if (!recent.length) { recentRequestsEl.innerHTML += "<p>No requests yet.</p>"; return; }
+      recent.forEach(r => {
+        recentRequestsEl.innerHTML += `<div class="item"><strong>${escapeHtml(r.patient)}</strong> needs <span class="badge plus">${escapeHtml(r.blood)}</span> at ${escapeHtml(r.location)} [${escapeHtml(r.urgency)}]</div>`;
+      });
+    }
+
+    function updateDashboard() {
+      statDonors.textContent = donors.length;
+      statRequests.textContent = requests.length;
+      myDonorsEl.innerHTML = donors.length ? donors.map(d => `<div class="item">${escapeHtml(d.name)} — ${escapeHtml(d.blood)} (${escapeHtml(d.location)})</div>`).join("") : "<p>No donors yet.</p>";
+      myRequestsEl.innerHTML = requests.length ? requests.map(r => `<div class="item">${escapeHtml(r.patient)} needs ${escapeHtml(r.blood)} at ${escapeHtml(r.location)} [${escapeHtml(r.urgency)}]</div>`).join("") : "<p>No requests yet.</p>";
+    }
+
+    if (donorForm) {
+      donorForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        if (!donorName.value.trim() || !donorBlood.value || !donorLocation.value.trim()) { showToast("⚠️ Fill all fields"); return; }
+        donors.push({ name: donorName.value.trim(), blood: donorBlood.value, location: donorLocation.value.trim() });
+        donorForm.reset();
+        showToast("✅ Donor Registered!");
+        updateRecentDonors();
+        updateDashboard();
+      });
+    }
+
+    if (searchBtn) {
+      searchBtn.addEventListener("click", () => {
+        donorResultsEl.innerHTML = "";
+        searchLoading.style.display = "block";
+        setTimeout(() => {
+          searchLoading.style.display = "none";
+          const blood = searchBlood.value;
+          const found = blood ? donors.filter(d => d.blood === blood) : donors;
+          if (!found.length) { donorResultsEl.innerHTML = "<p>No donors found.</p>"; return; }
+          found.forEach(d => {
+            donorResultsEl.innerHTML += `<div class="item"><strong>${escapeHtml(d.name)}</strong> — <span class="badge plus">${escapeHtml(d.blood)}</span> (${escapeHtml(d.location)})</div>`;
+          });
+        }, 600);
+      });
+    }
+
+    if (requestForm) {
+      requestForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        if (!patientName.value.trim() || !requestBlood.value || !requestLocation.value.trim()) { showToast("⚠️ Fill all fields"); return; }
+        requests.push({ patient: patientName.value.trim(), blood: requestBlood.value, location: requestLocation.value.trim(), urgency: requestUrgency.value, details: requestDetails.value.trim() });
+        requestForm.reset();
+        showToast("📢 Request Submitted!");
+        updateRecentRequests();
+        updateDashboard();
+      });
+    }
+
+    document.querySelectorAll(".accordion-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const panel = btn.nextElementSibling;
+        panel.style.maxHeight = panel.style.maxHeight ? null : panel.scrollHeight + "px";
+      });
+    });
+
+    const initial = (location.hash && document.getElementById(location.hash.replace("#", ""))) ? location.hash.replace("#", "") : "home";
+    showPage(initial);
+  });
+  </script>
+</body>
+</html>
